@@ -1,0 +1,18 @@
+<p>you are on the dresses page</p>
+<a 
+  style="cursor: pointer;"
+  class="list-group-item clearfix"
+  ngClick="selec"
+  *ngFor="let cloth of clothes">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ cloth.name }}</h4>
+    <p class="list-group-item-text">{{ cloth.description }}</p>
+  </div>
+  <span class="pull-right">
+        <img
+          [src]="cloth.imagePath"
+          alt="{{ cloth.name }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+</a>
