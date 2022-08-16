@@ -1,0 +1,38 @@
+<div class="col-xs-12">
+  <div class="float-sm-right">
+    <form>
+      <div class="clothDropDown">
+      <mat-form-field appearance="fill">
+        
+      <mat-label *ngIf="clothSelected"></mat-label>
+      <mat-select value="all clothes">
+      <mat-option *ngFor="let cloth of clothes" [value]="cloth.value" (click)="selectTypeOfChildCloth(cloth)">
+        {{cloth.viewValue}}
+      </mat-option>
+      </mat-select>
+      </mat-form-field>     
+    </div>
+    </form>
+    <div class="parentCloth">   
+      <div class="childClothList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
+        <app-cloth-list [clothes]="currentLst" (clothSelected)="clothDetails($event)"></app-cloth-list>   
+      </div>
+      <div class="childClothItem fullScreen">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="eachItem">
+            <app-cloth-detail
+            (removeSelectedItem)="onRemoveSelectedItem($event)"
+            *ngIf="clothSelected; else infoText"
+            [cloth]="clothSelected">
+            </app-cloth-detail>
+          </div>
+        </div>
+          <ng-template #infoText>
+            <p>Please select a Cloth!</p>
+          </ng-template>  
+       </div>  
+     </div>
+    </div>         
+  </div>
+</div>

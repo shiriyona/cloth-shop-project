@@ -1,0 +1,39 @@
+
+<div class="col-xs-12">
+  <div class="float-sm-right">
+      <form class="jewelDropDown">
+          <mat-form-field appearance="fill" >
+            <div class="aa">
+              <mat-label *ngIf="jewelSelected"></mat-label>
+              <mat-select value="all jewels">
+                  <mat-option *ngFor="let jewel of jewels" [value]="jewel.value" (click)="selectTypeOfJewel(jewel)">
+                  {{jewel.viewValue}}
+                  </mat-option>
+              </mat-select>
+            </div>
+          </mat-form-field>      
+      </form>
+      <div class="parentJewel">   
+        <div class="childJewelList fullScreen" [ngClass]="{'partScreen': isSelectedItem , 'fullScreen': !isSelectedItem}">
+          <app-jewel-list [jewels]="currentLst" (jewelSelected)="jewelDetails($event)"></app-jewel-list>   
+        </div>
+      <div class="childJewelItem fullScreen">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="eachItem">
+              <app-jewel-detail 
+              (removeSelectedItem)="onRemoveSelectedItem($event)"
+              *ngIf="jewelSelected; else infoText"
+              [jewel]="jewelSelected">
+              </app-jewel-detail>
+            </div>
+          </div>
+            <ng-template #infoText>
+              <p>Please select a jewel!</p>
+            </ng-template>  
+        </div>  
+      </div>
+      </div>         
+    </div>
+  </div>
+  

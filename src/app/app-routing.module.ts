@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChildrenComponent } from './children/children.component';
-import { ClothListComponent } from './cloth-list/cloth-list.component';
-import { MenComponent } from './men/men.component';
-import { WomenComponent } from './women/women.component';
 
 const appRoutes: Routes = [
-    { path: 'women', component: WomenComponent },
-    { path:'men', component: MenComponent },
-    { path: 'children', component: ChildrenComponent },
-    { path: 'clothes-list', component: ClothListComponent }
+    { path: 'cloth', loadChildren: () => import('./cloth/cloth.module').then(m => m.ClothModule)},
+    { path: 'jewel', loadChildren: () => import('./jewel/jewel.module').then(m => m.JewelModule)},
+    { path: 'help', loadChildren: () => import('./help/help.module').then(m => m.HelpModule)},
+    {
+        path: '',
+        redirectTo: 'cloth',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({

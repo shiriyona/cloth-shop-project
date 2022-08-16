@@ -1,0 +1,11 @@
+<div class="listOfItems">
+  <div class="row">
+    <div class="col-xs-12">
+    <app-cloth-item 
+      *ngFor="let clothEl of clothes"    
+      [cloth]="clothEl"
+      (clothSelected)="onClothItemSelected($event)">
+    </app-cloth-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<form class="contactForm" [formGroup]="contactForm">
+	<h3>contact</h3>
+	<mat-form-field appearance="fill">
+		<mat-label>Name</mat-label>
+		<input type="text" matInput formControlName="name" [errorStateMatcher]="matcher">
+		<mat-error *ngIf="!contactForm.get('name').valid && contactForm.get('name').touched"
+		class="help-block">
+		<span *ngIf="contactForm.get('name').errors['nameIsForbidden']">This name is invalid!</span>
+		<span *ngIf="contactForm.get('name').errors['required']">This field is required!</span>
+			Please enter a valid name
+		</mat-error>
+	</mat-form-field>
+	<mat-form-field appearance="fill">
+		<mat-label>Phone Number</mat-label>
+		<input matInput type="number" formControlName="phoneNumber" [errorStateMatcher]="matcher"
+		onkeydown="javascript: 
+		return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code)
+		? true : !isNaN(Number(event.key)) && event.code!=='Space'" />
+		<mat-error *ngIf="!contactForm.get('phoneNumber').valid && contactForm.get('phoneNumber').touched"
+		class="help-block">
+		<span *ngIf="contactForm.get('phoneNumber').errors['nameIsForbidden']">This phone number is invalid!</span>
+		<span *ngIf="contactForm.get('phoneNumber').errors['required']">This field is required!</span>
+			Please enter a valid number
+		</mat-error>
+	</mat-form-field>
+	<mat-form-field appearance="fill">
+		<mat-label>Email</mat-label>
+		<input matInput type="email" formControlName="email" [errorStateMatcher]="matcher"> 
+		<mat-error *ngIf="!contactForm.get('email').valid && contactForm.get('email').touched"
+		class="help-block">
+		<span *ngIf="contactForm.get('email').errors['nameIsForbidden']">This email is invalid!</span>
+		<span *ngIf="contactForm.get('email').errors['required']">This field is required!</span>
+			Please enter a valid number
+		</mat-error>	
+	</mat-form-field>
+	<mat-form-field appearance="fill">
+		<mat-label>About</mat-label>
+		<mat-select value="three" matInput type="text" formControlName="about" [errorStateMatcher]="matcher">
+		  <mat-option value="one">report of faults</mat-option>
+		  <mat-option value="two">your order</mat-option>
+		  <mat-option value="three">other</mat-option>
+		</mat-select>
+		<mat-error *ngIf="!contactForm.get('about').valid && contactForm.get('about').touched"
+		class="help-block">
+		<span *ngIf="contactForm.get('about').errors['nameIsForbidden']">This phone number is invalid!</span>
+		<span *ngIf="contactForm.get('about').errors['required']">This field is required!</span>
+			Please select a valid subject
+		</mat-error>
+	</mat-form-field>
+	<mat-form-field appearance="fill">
+		<mat-label>tell us more</mat-label>
+		<textarea matInput>
+		</textarea>
+	</mat-form-field>
+	<div class="container">	
+		<div class="invalidText"> 
+			<span 
+			*ngIf="contactForm.invalid"
+			class="help-block">Please enter valid data!</span>
+		</div>
+			<button mat-button class="buttonSumbit" type="submit" class="btn btn-primary"
+			[disabled]="contactForm.invalid"
+			(click)="onSubmit()"
+			(click)="openDialog()">Submit</button>
+			<button mat-button class="buttonSumbit" class="btn btn-primary"
+			(click)="onGetData()"			
+			>Get</button>
+		</div>
+	
+</form>
+
+
+
+  
+  
+  
+  
+  
+
+
+ 

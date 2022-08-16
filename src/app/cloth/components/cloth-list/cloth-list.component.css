@@ -1,0 +1,10 @@
+.listOfItems {  
+    cursor: pointer;
+}
+.partScreen {
+    width: 30%;
+}
+.fullScreen {
+    width: 100%;
+}
+

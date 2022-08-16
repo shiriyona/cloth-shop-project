@@ -1,0 +1,18 @@
+<div class="listOfItems">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-jewel-item 
+        *ngFor="let jewelEl of jewels"    
+        [jewel]="jewelEl" 
+        (jewelSelected)="onJewelItemSelected($event)">
+      </app-jewel-item>
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+  
+  

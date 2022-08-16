@@ -2,49 +2,46 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
-
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { WomenComponent } from './women/women.component';
-import { MenComponent } from './men/men.component';
-import { ChildrenComponent } from './children/children.component';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { ClothModule } from './cloth/cloth.module';
+import { JewelModule } from './jewel/jewel.module';
+import { HelpModule } from './help/help.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { ClothListComponent } from './cloth-list/cloth-list.component';
-import { ClothItemComponent } from './cloth-list/cloth-item/cloth-item.component';
 
-import { ClothService } from './cloth.service';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    WomenComponent,
-    MenComponent,
-    ChildrenComponent,
-    ClothListComponent,
-    ClothItemComponent 
-    
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, 
     ReactiveFormsModule,
     MatSelectModule,
-    RouterModule.forRoot([]),
-    AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
-    
+    MatDialogModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule.forRoot([]),
+    AppRoutingModule,
+    ClothModule,
+    JewelModule,
+    HelpModule
   ],
-  providers: [ ClothService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

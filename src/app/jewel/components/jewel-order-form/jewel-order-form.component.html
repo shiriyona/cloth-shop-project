@@ -1,0 +1,63 @@
+<form class="orderForm" [formGroup]="orderForm">
+  <h3>Order</h3>
+  <mat-form-field appearance="fill">
+		<mat-label>Name</mat-label>
+		<input type="text" matInput formControlName="name" [errorStateMatcher]="matcher"
+    placeholder="Ex. John"
+    minlength="2">
+		<mat-error *ngIf="!orderForm.get('name').valid && orderForm.get('name').touched"
+		class="help-block">
+		<span *ngIf="orderForm.get('name').errors['nameIsForbidden']">This name is invalid!</span>
+		<span *ngIf="orderForm.get('name').errors['required']">This field is required!</span>
+			Please enter a valid name
+		</mat-error>
+	</mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Adress</mat-label>
+      <input type="text" matInput formControlName="adress" [errorStateMatcher]="matcher"
+      placeholder="Ex. Israel, Tel-Aviv">
+      <mat-error *ngIf="!orderForm.get('adress').valid && orderForm.get('adress').touched"
+      class="help-block">
+      <span *ngIf="orderForm.get('adress').errors['nameIsForbidden']">This name is invalid!</span>
+      <span *ngIf="orderForm.get('adress').errors['required']">This field is required!</span>
+        Please enter a valid adress
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" formControlName="email" [errorStateMatcher]="matcher"
+      placeholder="Ex. user@gamil.com" ngModel [email]="true"> 
+      <mat-error *ngIf="!orderForm.get('email').valid && orderForm.get('email').touched"
+      class="help-block">
+      <span *ngIf="orderForm.get('email').errors['nameIsForbidden']">This email is invalid!</span>
+      <span *ngIf="orderForm.get('email').errors['required']">This field is required!</span>
+        Please enter a valid email
+      </mat-error>	
+    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher"
+    placeholder="Ex. 134738746">
+    <mat-error *ngIf="!orderForm.get('password').valid && orderForm.get('password').touched"
+    class="help-block">
+    <span *ngIf="orderForm.get('password').errors['nameIsForbidden']">This password is invalid!</span>
+    <span *ngIf="orderForm.get('password').errors['required']">This field is required!</span>
+      Please enter a valid password with at least 8 characters
+    </mat-error>
+  </mat-form-field>
+  <span
+    *ngIf="orderForm.invalid"
+    class="help-block">Please enter valid data!</span>
+    <div class="container">
+    
+      <button mat-button class="buttonSumbit" type="submit" class="btn btn-primary"
+      [disabled]="orderForm.invalid"
+      (click)="onSubmit()"
+      (click)="openDialog()">Submit</button>
+    </div>
+
+</form>
+
+
+
+

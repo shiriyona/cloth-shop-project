@@ -1,0 +1,21 @@
+<div class="eachItem">
+  <div class="row">
+      <div class="col-xs-12">
+        <button class="close" (click)="onJewelFullList()"></button> 
+        <img
+          [src]="jewel.imagePath" style="width: 100%;"
+          alt="{{ jewel.name }}"
+          class="img-responsive">
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>{{ jewel.name }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        {{ jewel.description }}
+      </div>
+    </div>
+  </div>

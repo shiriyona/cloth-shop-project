@@ -1,22 +1,23 @@
-<nav class="navbar navbar-default">
+<div class="col-xs-12">
+<nav class="navbar navbar-default" id="navBar">
     <div class="container-fluid"> 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a routerLink="/women">Women</a></li>
-          <li routerLinkActive="active"><a routerLink="/men">Men</a></li>
-          <li routerLinkActive="active"><a routerLink="/children">Children</a></li>
-                </ul>
-        
-       
-  
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/cloth/women">Women</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/cloth/men">Men</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/cloth/children">Children</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="../jewel/all-jewels">All Jewels</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/jewel/jewel-order-form">Jewel Order</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/help/contact">contact</a></li>
+          <li class="textNavBar" routerLinkActive="active"><a routerLink="/help/about">about</a></li>
+        </ul>
       </div>
     </div>    
   </nav>
  <div class="row">
     <div class="col-xs-12">
         <router-outlet></router-outlet>
-
     </div>
  </div> 
-
+</div>
 
