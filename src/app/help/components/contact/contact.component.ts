@@ -48,19 +48,20 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     console.warn(this.contactForm.value);
     console.log(this.contactForm);
-    this.loadSubmitDataSubscription = this.helpService.loadContactData(this.contactForm.value).subscribe(
-      res => {
+    //http post code
+    // this.loadSubmitDataSubscription = this.helpService.loadContactData(this.contactForm.value).subscribe(
+    //   res => {
         this.contactForm.reset();
-
-      }
-      ); 
+      // }
+      // ); 
   }
 
-  onGetData() {
-    this.loadSubmitDataSubscription = this.helpService.getContactData(this.contactForm).subscribe(res => {
-      this.contactForm = res;
-    }); 
-  }
+  //http get code
+  // onGetData() {
+  //   this.loadSubmitDataSubscription = this.helpService.getContactData(this.contactForm).subscribe(res => {
+  //     this.contactForm = res;
+  //   }); 
+  // }
 
   ngOnDestroy(): void {
     if(this.loadSubmitDataSubscription) {
