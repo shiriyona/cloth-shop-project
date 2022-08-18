@@ -14,7 +14,7 @@ export class ClothDetailComponent implements OnInit {
   @Input() selectedClothItem;
   @Output() removeSelectedItem = new EventEmitter();
 
- 
+
 
   constructor(private _location: Location,
     private router: Router) { }

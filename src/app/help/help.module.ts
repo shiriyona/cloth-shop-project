@@ -11,6 +11,8 @@ import { HelpRoutingModule } from "./help-routing.module";
 import { HelpService } from "./services/help.service";
 import { DialogContentComponent } from './components/contact/dialog-content/dialog-content.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
+
 
 
 
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
         MatInputModule, 
         MatDialogModule,
         HttpClientModule,
-        HelpRoutingModule
+        HelpRoutingModule,
+        SwiperModule
     ],
     providers: [ HelpService,
         {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}} ],

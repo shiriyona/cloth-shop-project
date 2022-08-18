@@ -15,5 +15,16 @@ export class Contact {
       this.about = email;
       this.tellUsMore = tellUsMore;
 
-    }
+    }    
 }
+
+
+export class Imag {
+  public imagePath: string;
+  
+  
+  
+  constructor(imagePath: string) {
+    this.imagePath = imagePath;
+  }
+  }

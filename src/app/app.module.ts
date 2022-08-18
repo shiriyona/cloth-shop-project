@@ -14,6 +14,9 @@ import { JewelModule } from './jewel/jewel.module';
 import { HelpModule } from './help/help.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
+
+
 
 
 
@@ -23,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ClothModule,
     JewelModule,
-    HelpModule
+    HelpModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

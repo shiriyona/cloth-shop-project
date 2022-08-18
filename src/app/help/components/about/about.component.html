@@ -1,6 +1,52 @@
+<!-- 
+<h1 class="aboutTitle">OUR SHOP</h1> -->
+<br>
+<div class="waviy" >
+  <span style="--i:1">O</span>
+  <span style="--i:2">U</span>
+  <span style="--i:3">R S</span>
+  <span style="--i:4">H</span>
+  <span style="--i:5">O</span>
+  <span style="--i:6">P</span>
+</div><br><hr>
+
+<!-- <svg viewBox="0 0 960 300">
+<symbol id="s-text">
+  <text text-anchor="middle" x="50%" y="80%">OUR SHOP. </text>
+  <text text-anchor="middle" x="52%" y="80%">OUR SHOP. </text>  
+</symbol>
+  
+<g class = "g-ants">
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+</g>
+</svg> -->
 
 
-<h1 class="aboutTitle">OUR SHOP</h1>
+<swiper
+[slidesPerView]="1"
+[spaceBetween]="50"
+[navigation]="true"
+[pagination]="{ type: 'fraction' }"
+[centeredSlides]="true"
+[keyboard]="{
+  enabled: true
+}"
+[virtual]="true"
+class="my-swiper">
+<ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
+  <div class="swiper-slide-container">
+   <img src="https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_960_720.jpg">
+   
+  </div>
+</ng-template>
+</swiper>
+
+
+
 <p class="aboutText">
     There are many variations of passages of Lorem Ipsum available,<br>
     but the majority have suffered alteration in some form, by injected<br> 
@@ -16,15 +62,9 @@
     injected humour, or non-characteristic words etc.
 </p>
 
-<div class="container">
-  <h2 class="title">
-    <span class="title-word title-word-1">Have </span>
-    <span> </span>
-    <span class="title-word title-word-2">an </span>
-    <span class="title-word title-word-3">amazing </span>
-    <span class="title-word title-word-4">day</span>
-  </h2>
-</div>
+
+
+
 
 
     
