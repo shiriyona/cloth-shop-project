@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { ClothDetailComponent } from './components/cloth-detail/cloth-detail.component';
 import { ClothListComponent } from './components/cloth-list/cloth-list.component';
+import { AmountToStringPipes } from './pipes/amount-to-string-pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ClothListComponent } from './components/cloth-list/cloth-list.component
     ChildrenComponent,
     ClothItemComponent,
     ClothListComponent ,
-    ClothDetailComponent 
+    ClothDetailComponent,
+    AmountToStringPipes
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,6 @@ import { ClothListComponent } from './components/cloth-list/cloth-list.component
     MatInputModule,
     ClothRoutingModule
   ],
-  providers: [ ClothService],
+  providers: [ ClothService, AmountToStringPipes],
 })
 export class ClothModule { }

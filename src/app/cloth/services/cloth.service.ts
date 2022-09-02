@@ -23,12 +23,12 @@ export class ClothService {
       'dress1',
       'this is dress1 description',
       'https://cdn.pixabay.com/photo/2016/06/29/04/39/bride-1486004__340.jpg',
-      100
+      9
   ),
     new WomanDress('dress2',
       'this is dress2 description',
       'https://cdn.pixabay.com/photo/2017/05/12/08/27/gothic-2306457__340.jpg',
-      100
+      0
    ),
    new WomanDress(
     'dress3',
@@ -48,13 +48,13 @@ export class ClothService {
     new WomanShirt('shirt2',
       'this is shirt2 description',
       'https://cdn.pixabay.com/photo/2015/07/10/16/17/girl-839613__340.jpg',
-      100
+      8
    ),
    new WomanShirt(
     'shirt3',
     'this is shirt3 description',
     'https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156_960_720.jpg',
-    100
+    0
    )
   ];
 
@@ -63,7 +63,7 @@ export class ClothService {
       'shoe1',
       'this is shoe1 description',
       'https://cdn.pixabay.com/photo/2016/11/21/16/55/high-heels-1846436__340.jpg',
-      100
+      0
   ),
     new WomanShoe('shoe2',
       'this is shoe2 description',
@@ -83,7 +83,7 @@ export class ClothService {
       'shirt1',
       'this is shirt1 description',
       'https://cdn.pixabay.com/photo/2015/09/09/22/02/shirt-933671__340.jpg',
-      100
+      4
     ),
     new ManShirt(
       'shirt2',
@@ -137,7 +137,7 @@ export class ClothService {
       'shoe3',
       'this is shoe3 description',
       'https://cdn.pixabay.com/photo/2016/10/18/08/13/travel-1749508__340.jpg',
-      100
+      0
     )
   ];
 

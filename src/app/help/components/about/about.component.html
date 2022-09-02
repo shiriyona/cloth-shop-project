@@ -39,8 +39,7 @@
 class="my-swiper">
 <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
   <div class="swiper-slide-container">
-   <img src="https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_960_720.jpg">
-   
+    <img [src]="imgs[i]?.url">
   </div>
 </ng-template>
 </swiper>

@@ -10,18 +10,17 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1>{{ cloth.name }}</h1>
+      <h2>{{ cloth.name }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      
       {{ cloth.description }}  
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <p>Amount in the stock: {{ cloth.amount }} </p>   
+      <strong>{{ cloth.amount | stockStatus }} </strong>   
     </div>
   </div>
  </div>  
