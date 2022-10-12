@@ -10,19 +10,15 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { HelpRoutingModule } from "./help-routing.module";
 import { HelpService } from "./services/help.service";
 import { DialogContentComponent } from './components/contact/dialog-content/dialog-content.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SwiperModule } from 'swiper/angular';
-
-
-
-
+import { HttpClientInterceptor } from "../core/http-interceptor";
 
 @NgModule({
     declarations: [
         ContactComponent,
         AboutComponent,
         DialogContentComponent
-
     ],
 
     imports: [
@@ -38,6 +34,11 @@ import { SwiperModule } from 'swiper/angular';
         SwiperModule
     ],
     providers: [ HelpService,
-        {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}} ],
+        {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+        { 
+            provide: HTTP_INTERCEPTORS,  
+            useClass: HttpClientInterceptor, 
+            multi: true 
+        } ],
 })
 export class HelpModule { }

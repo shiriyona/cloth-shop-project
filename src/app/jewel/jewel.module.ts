@@ -13,7 +13,7 @@ import { JewelItemComponent } from "./components/all-jewels/jewel-list/jewel-ite
 import { JewelDetailComponent } from './components/all-jewels/jewel-detail/jewel-detail.component';
 import { DialogOrderComponent } from './components/jewel-order-form/dialog-order/dialog-order.component';
 import { MatDialogModule } from "@angular/material/dialog";
-
+import { AmountToStringPipes } from "./pipes/amount-to-string-pipe";
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     JewelListComponent, 
     JewelItemComponent,
     JewelDetailComponent,
-    DialogOrderComponent  
+    DialogOrderComponent,
+    AmountToStringPipes
     ],
 
     imports: [
@@ -36,6 +37,6 @@ import { MatDialogModule } from "@angular/material/dialog";
         JewelRoutingModule,
         MatDialogModule,
     ],
-    providers: [ JewelService ],
+    providers: [ JewelService, AmountToStringPipes ],
 })
 export class JewelModule { }

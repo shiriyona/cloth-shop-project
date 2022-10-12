@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform,  } from "@angular/core"
 
+
 @Pipe({name: 'stockStatus'})
 export class AmountToStringPipes implements PipeTransform{
   transform(value: any, amount: any[]): any{
@@ -12,5 +13,5 @@ export class AmountToStringPipes implements PipeTransform{
       else if (value?.length == 0 ) {
         return 'no in stock'
       }
-   }
- }
+  }
+}

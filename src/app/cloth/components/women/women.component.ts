@@ -21,7 +21,6 @@ export class WomenComponent implements OnInit, OnDestroy {
   
   isSelectedItem: boolean = false;
   
-
   clothes: Cloth[] = [
     {value: 'all clothes', viewValue: 'all clothes'},
     {value: 'dresses', viewValue: 'dresses'},

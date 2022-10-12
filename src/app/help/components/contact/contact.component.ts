@@ -16,7 +16,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -40,28 +39,30 @@ export class ContactComponent implements OnInit {
   constructor(public dialog: MatDialog, 
     private helpService: HelpService) {}
 
-
   ngOnInit(): void {
   }
-
 
   onSubmit() {
     console.warn(this.contactForm.value);
     console.log(this.contactForm);
-    //http post code
-    // this.loadSubmitDataSubscription = this.helpService.loadContactData(this.contactForm.value).subscribe(
-    //   res => {
-        this.contactForm.reset();
-      // }
-      // ); 
+    // this.loadContactData();
   }
 
-  //http get code
-  // onGetData() {
-  //   this.loadSubmitDataSubscription = this.helpService.getContactData(this.contactForm).subscribe(res => {
-  //     this.contactForm = res;
-  //   }); 
-  // }
+  loadContactData() {
+    // http post code
+    this.loadSubmitDataSubscription = this.helpService.loadContactData(this.contactForm.value).subscribe(
+      res => {
+        this.contactForm.reset();
+      }
+      ); 
+  }
+
+ // http get code
+  onGetData() {
+    this.loadSubmitDataSubscription = this.helpService.getContactData(this.contactForm.value).subscribe(res => {
+      this.contactForm = res;
+    }); 
+  }
 
   ngOnDestroy(): void {
     if(this.loadSubmitDataSubscription) {
@@ -76,5 +77,6 @@ export class ContactComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  
 }
 

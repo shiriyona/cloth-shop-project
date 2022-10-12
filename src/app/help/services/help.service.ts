@@ -6,21 +6,14 @@ import { catchError, retry } from 'rxjs/operators';
 @Injectable()
 export class HelpService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    loadContactData(contactForm): Observable<any> {
-        return this.http.post("https://mywebapp/submitRequst", contactForm)
-          .pipe(
-            catchError(this.loadContactData)
-          );
-      }
+  loadContactData(contactForm): Observable<any> {
+      return this.http.post("https://mywebapp/submitRequst", contactForm);
+    }
 
-      getContactData(contactForm): Observable<any>  {
-        return this.http.get("https://mywebapp/getData")
-          .pipe(
-            catchError(contactForm) // then handle the error
-          );
-      }
-
+    getContactData(contactForm): Observable<any>  {
+      return this.http.get("https://mywebapp/getData");
+    }
 
 }

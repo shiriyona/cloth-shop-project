@@ -19,8 +19,7 @@ const routes: Routes = [
     exports: [RouterModule]
   })
 
+export class HelpRoutingModule {
 
-  export class HelpRoutingModule {
-  
-  }
+}
 

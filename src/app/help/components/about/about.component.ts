@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Imag as Imag } from '../../model/help.model';
-
 import SwiperCore, { Keyboard, Pagination, Navigation, Virtual } from 'swiper';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);

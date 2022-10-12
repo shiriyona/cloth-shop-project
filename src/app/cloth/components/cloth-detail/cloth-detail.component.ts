@@ -15,8 +15,6 @@ export class ClothDetailComponent implements OnInit {
   @Input() selectedClothItem;
   @Output() removeSelectedItem = new EventEmitter();
 
-  
-
   constructor(private amountToStringPipes: AmountToStringPipes) { }
 
   ngOnInit(): void {

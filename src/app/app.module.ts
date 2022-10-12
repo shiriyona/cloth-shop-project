@@ -15,19 +15,15 @@ import { HelpModule } from './help/help.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { SwiperModule } from 'swiper/angular';
-
-
-
-
-
-
+import { CanActivateRouteGuard } from './core/can-activate-route.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientInterceptor } from './core/http-interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    
+    HeaderComponent   
   ],
   imports: [
     BrowserModule,
@@ -46,7 +42,16 @@ import { SwiperModule } from 'swiper/angular';
     HelpModule,
     SwiperModule
   ],
-  providers: [],
+
+  providers: [CanActivateRouteGuard,
+    { 
+      provide: HTTP_INTERCEPTORS,  
+      useClass: HttpClientInterceptor, 
+      multi: true 
+    }
+  ],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
