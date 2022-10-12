@@ -48,14 +48,13 @@
   <span
     *ngIf="orderForm.invalid"
     class="help-block">Please enter valid data!</span>
-    <div class="container">
-    
-      <button mat-button class="buttonSumbit" type="submit" class="btn btn-primary"
-      [disabled]="orderForm.invalid"
-      (click)="onSubmit()"
-      (click)="openDialog()">Submit</button>
-    </div>
-
+<div class="container">   
+  <button mat-button class="buttonSumbit" type="submit" class="btn btn-primary"
+    [disabled]="orderForm.invalid"
+    (click)="onSubmit()"
+    (click)="openDialog()">Submit
+  </button>
+  </div>
 </form>
 
 
